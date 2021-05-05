@@ -27,15 +27,15 @@
 
       <div id="select">
         <label for="type">Filtra per genere</label>
-        <select name="type" v-model="scelta">
+        <!-- <select name="type" v-model="scelta">
           <option value="">All</option>
           <option :value="genre" v-for="genre in generi">{{ genre }}</option>
-        </select>
+        </select> -->
       </div>
 
       <div class="container">
 
-        <div class="artist-box" v-for="album in albums" v-if="album.genre == scelta || scelta == '' ">
+        <div class="artist-box" v-for="album in albums">
           <div class="artist-album">
             <img class="artist-img" :src="album.poster" :alt="album.title">
             <div class="overlay"><i class="far fa-play-circle"></i></div>
@@ -52,6 +52,6 @@
   </div>
 
 
-  <script src="js/script.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
 </body>
 </html>
