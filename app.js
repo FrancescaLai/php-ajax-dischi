@@ -4,7 +4,7 @@ var app = new Vue({
       albums: []
   },
   mounted: function(){
-      axios.get('http://localhost:8888/php-ajax-dischi//api.php')
+      axios.get('http://localhost/Classe27/php-ajax-dischi/api.php')
       .then((serverResponse) => {
           this.albums = serverResponse.data;
       });
