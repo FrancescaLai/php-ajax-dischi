@@ -1,3 +1,5 @@
+// Istanzio Vue per l'esercizio index2.php
+
 var app = new Vue({
   el: '#root',
   data: {
