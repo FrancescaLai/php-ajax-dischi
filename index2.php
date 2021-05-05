@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . 'database.php';
+  include __DIR__ . '/database.php';
 
 ?>
 
@@ -16,10 +16,7 @@ include __DIR__ . 'database.php';
   <!-- Font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Vue -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <!-- Axios cdn -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css">
   <title>Vue dischi</title>
 </head>
@@ -38,16 +35,20 @@ include __DIR__ . 'database.php';
 
       <div class="container">
 
-        <div class="artist-box" v-for="album in albums">
-          <div class="artist-album">
-            <img class="artist-img" :src="album.poster" :alt="album.title">
-            <div class="overlay"><i class="far fa-play-circle"></i></div>
-            <a href="#"><h5 class="white-txt capslock">{{ album.title }}</h5></a>
-            <a href="#"><p>{{ album.author }}</p></a>
-            <a href="#"><p>{{ album.year }}</p></a>
-          </div>
-        </div>
-
+        
+          <?php foreach ($albums as $album): ?>
+            <div class="artist-box">
+              <div class="artist-album">
+                <img class="artist-img" src="<?php echo $album['poster']; ?>" alt="<?php echo $album['title']; ?>">
+                <div class="overlay"><i class="far fa-play-circle"></i></div>
+                <a href="#">
+                  <h5 class="white-txt capslock"><?php echo $album['title']; ?></h5>
+                </a>
+                <a href="#"><p><?php echo $album['author']; ?></p></a>
+                <a href="#"><p><?php echo $album['year']; ?></p></a>
+              </div>
+            </div>
+          <?php endforeach; ?>
       </div>
 
     </main>

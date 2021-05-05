@@ -27,10 +27,6 @@
 
       <div id="select">
         <label for="type">Filtra per genere</label>
-        <!-- <select name="type" v-model="scelta">
-          <option value="">All</option>
-          <option :value="genre" v-for="genre in generi">{{ genre }}</option>
-        </select> -->
       </div>
 
       <div class="container">
